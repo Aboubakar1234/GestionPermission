@@ -1,0 +1,11 @@
+{% extends 'doctor_homepage.html' %}
+
+{% block content %}
+
+<h2>Détails de l'enregistrement médical</h2>
+
+<p>ID : {{ record.id }}</p>
+<p>Nom du patient : {{ record.patient.first_name }} {{ record.patient.last_name }}</p>
+<p>Maladie : {{ record.disease }}</p>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- vos balises head ici -->
+</head>
+<body>
+    <header>
+        <!-- votre header ici -->
+        <nav>
+            <!-- Encore quelque soucis a regler car les utilisateur n'arrivnet pas a le faire -->
+            {% for patient in doctor.patient_set.all %}
+    <a href="{% url 'add_prescription' patient.id %}">Add Prescription for </a>{{ patient.first_name }} {{ patient.last_name }}
+    <a href="{% url 'view_medical_record' patient.medicalrecord.id %}">View Medical Record for </a>{{ patient.first_name }} {{ patient.last_name }}<br>
+{% endfor %}
+        </nav>
+    </header>
+    <main>
+
+        {% block content %}
+        <!-- contenu spécifique à la page ici -->
+        {% endblock %}
+    </main>
+</body>
+</html>
